@@ -6,8 +6,7 @@ import Movies from "./components/Movies";
 function App() {
     const [myVar, setMyVar] = useState('Hello World')
     const [movies, setMovies] = useState([])
-    const [count, setCount] = useState(0);
-
+//    const [count, setCount] = useState(0);
     function fetchMoviesHandler() {
         fetch('https://swapi.dev/api/films/')
             .then(response => {
@@ -47,7 +46,7 @@ function App() {
             <button onClick={onClickHandler}>Click me</button>
             <Test myProp={myVar} updater={childToParentUpdater}/>
             {movies.map((element) => {
-                return <Movies movie={element}/>
+                return <Movies key={element.id} movie={element}/>
             })}
         </div>
     )
