@@ -1,6 +1,7 @@
 import './App.css';
 import Test from "./components/Test";
 import {useEffect, useState} from "react";
+import Movies from "./components/Movies";
 
 function App() {
     const [myVar, setMyVar] = useState('Hello World')
@@ -46,10 +47,10 @@ function App() {
             <button onClick={onClickHandler}>Click me</button>
             <Test myProp={myVar} updater={childToParentUpdater}/>
             {movies.map((element) => {
-                return <ul> <li>{element.title}</li> </ul>
+                return <Movies movie={element}/>
             })}
         </div>
-    );
+    )
 }
 
 export default App;

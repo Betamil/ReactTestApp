@@ -4,7 +4,7 @@ const Test = (props) => {
 
     return (
         <div>
-            <button onClick={props.updater('toto')}>Click me</button>
+            <p>Propriété 1 : {props.myProp}</p>
         </div>
     )
 }
