@@ -1,7 +1,8 @@
 import './App.css';
-import Test from "./components/Test";
+import Test from "./components/test/Test";
 import {useEffect, useState} from "react";
-import Movies from "./components/Movies";
+import Movies from "./components/movies/Movies";
+import MoviesHeader from "./components/moviesHeader/MoviesHeader";
 
 function App() {
     const [myVar, setMyVar] = useState('Hello World')
@@ -45,6 +46,7 @@ function App() {
             <h1>{myVar}</h1>
             <button onClick={onClickHandler}>Click me</button>
             <Test myProp={myVar} updater={childToParentUpdater}/>
+            <MoviesHeader />
             {movies.map((element) => {
                 return <Movies key={element.id} movie={element}/>
             })}
